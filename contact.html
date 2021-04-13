@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2|Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Contac</title>
+    <style>
+        *,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(120deg, #abebc6d3 0%, #a74a0c 100%);
+    height: 100vh;
+    font-family: "Baloo 2", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.title {
+    font-family: 'Mitr', sans-serif;
+    padding: 0 15px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.title-1 {
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 68%,
+        #abebc6d3 68%,
+        #abebc6d3 95%,
+        transparent 95%
+    );
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222222;
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 30px 50px;
+}
+
+.form__group {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form__label {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.form__input {
+    font-size: 16px;
+    font-family: inherit;
+    padding: 3px 10px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: 4px solid transparent;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.form__input::-webkit-input-placeholder {
+    color: #000;
+    transform: translateY(4px);
+}
+
+.form__input:focus::-webkit-input-placeholder {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.form__input:focus {
+    outline: none;
+    border-bottom: 4px solid #a5ee6e;
+    width: 66.6666%;
+    transition: all 0.3s;
+}
+
+.form__input:focus:invalid {
+    border-bottom: 4px solid #e94a2f;
+}
+
+.form__input:focus + .form__label {
+    opacity: 1;
+    font-size: 20px;
+}
+
+.form__message,
+.form__message .message__input {
+    width: 100%;
+}
+
+.submitBtn {
+    display: block;
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color: #abebc6d3;
+    border-radius: 30px;
+    margin: 20px auto;
+    font-size: 25px;
+    font-family: inherit;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submitBtn:hover {
+    transform: scale(1.02) translateY(-2px);
+}
+.submitBtn:active {
+    transform: scale(0.98) translateY(1px);
+}
+
+    </style>
+</head>
+
+
+<body>
+    <form action="mailto:wallydibombepro@gmail.com" enctype="text/plain" >
+    <div class="container">
+        <h1 class="title title-1">Contact</h1>
+
+        <form class="form">
+            <div class="form__group">
+                <input type="text" class="form__input" id="nom" placeholder="Votre Nom" required>
+                <label for="nom" class="form__label">Votre Nom</label>
+            </div>
+            <div class="form__group">
+                <input type="email" class="form__input" id="email" placeholder="Votre Email" required>
+                <label for="email" class="form__label">Votre Email</label>
+            </div>
+            <div class="form__group">
+                <input type="number" class="form__input" id="age" min="16" max="99" step="1" placeholder="Votre Age" required>
+                <label for="age" class="form__label">Votre Age</label>
+            </div>
+            <div class="form__message">
+                <label for="message" class="form__message-label">
+                    Message complémentaire (facultatif) :
+                </label>
+                <textarea name="" id="message" cols="30" rows="10" class="form__input message__input" required></textarea>
+            </div>
+
+            <div class="submit">
+                <button class="submitBtn">Envoyer &rarr;</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

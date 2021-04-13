@@ -1,0 +1,304 @@
+<html lang = "fr">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+        <meta name="keywords" content="navbar, responsive, HTML, CSS, JavaScript, nav" />
+        <meta name="author" content="Manikanta Vedula" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OSOUWAX</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Train+One&display=swap');
+           
+            /*header*/
+
+            
+           
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                transition: all.2s linear;
+                text-decoration: none;
+                list-style: none;
+                box-sizing: border-box;
+            }
+           
+            
+
+            body{
+                background-color: #abebc6d3;
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                font-family: 'Train One', cursive;
+                
+            }
+            a{
+              font-size: 30px;
+              font-family: 'Mitr', sans-serif;
+              color: aliceblue; 
+            }
+            .navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 8vh; /* change to 8vh */
+
+  background-color: #000;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar .logo {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Mitr', sans-serif;
+  letter-spacing: 5px;
+  
+}
+
+.navbar ul.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 35%;
+  list-style-type: none;
+}
+
+.navbar ul.nav-links li a {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.navbar .menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-grow: 1;
+  margin-left: 25px;
+}
+
+.navbar .menu-icon span {
+  display: block;
+  border-radius: 15px;
+  width: 25px;
+  height: 5px;
+  background-color: #fff;
+  margin: 5px;
+  transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 00px) {
+  body {
+    overflow: hidden;
+  }
+
+  .navbar .menu-icon {
+    display: block;
+    z-index: 99999;
+  }
+
+  .navbar .logo {
+    flex-grow: 1;
+  }
+
+  .navbar ul.nav-links {
+    position: absolute;
+    top: 8vh; /* change to 8vh */
+    height: 92vh; /* change to 92vh */
+    left: 0px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.87);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+    width: 100%;
+  }
+
+  .navbar ul.nav-links li {
+    opacity: 0;
+  }
+
+  #content h1.content-header {
+    font-size: 25px;
+  }
+
+  #content p.content-para {
+    font-size: 13px;
+  }
+}
+
+.navbar ul.nav-links.menu-active {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@keyframes navLinkAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.navbar .menu-icon.span-anime span:first-child {
+  transform: rotate(-135deg) translate(-20px, 6px);
+  margin-left: -18px;
+}
+
+.navbar .menu-icon.span-anime span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .menu-icon.span-anime span:last-child {
+  transform: rotate(135deg) translate(-19px, -5px);
+  margin-left: -17px;
+}
+                
+/*debut galerie photo*/
+            .container{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 90%;
+                margin: 60 auto;
+            }
+            .container a{
+                /*taille tereglage de la galerie*/
+                height: 450px;
+                width: 350px;
+                margin: 10px;
+                border-radius: 9px;
+                overflow: hidden;
+                box-shadow: 0 3px 5px #000;
+                border: honeydew solid 2px;
+            }
+            .container a img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+
+            }
+            .container a img:hover{
+                transform : scale(1.4);
+            }
+
+/*fin de falerie sans compter body*/
+
+   
+    
+            
+            
+            
+            
+        </style>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+       <script>
+          lightgallery(document.querySelector('.galerie'))
+       </script>
+    </head>
+    
+   
+        
+    <body>
+        <nav class="navbar">
+            <div class="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        
+            <div class="logo">
+              
+              <a href="index.html">Osouwax</a>
+            </div>
+        
+            <ul class="nav-links">
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <script>
+              const menuSlide = () => {
+  const menuIcon = document.querySelector(".menu-icon");
+  const navLinks = document.querySelector(".nav-links");
+  const navLinksInner = document.querySelectorAll(".nav-links li");
+
+  //menu-icon click event
+  menuIcon.addEventListener("click", () => {
+    //toggle active class
+    navLinks.classList.toggle("menu-active");
+
+    //animate navLinks
+    navLinksInner.forEach((li, index) => {
+      if (li.style.animation) {
+        li.style.animation = "";
+      } else {
+        li.style.animation = `navLinkAnime 0.5s ease forwards ${
+          index / 7 + 0.3
+        }s`;
+      }
+    });
+
+    //toggle for menu-icon animation
+    menuIcon.classList.toggle("span-anime");
+  });
+};
+
+menuSlide();
+
+          </script>
+       
+
+       
+       <div class="container">
+
+        <a href="image1.jpg">
+            <img src="image1.jpg" alt="">
+        </a>
+        <a href="image2.jpg">
+            <img src="image2.jpg" alt="">
+        </a>
+        <a href="image3.jpg">
+            <img src="image3.jpg" alt="">
+        </a>
+        <a href="image4.jpg">
+            <img src="image4.jpg" alt="">
+        </a>
+        <a href="image5.jpg">
+            <img src="image5.jpg" alt="">
+        </a>
+        <a href="image6.jpg">
+            <img src="image6.jpg" alt="">
+        </a>
+        <a href="image7.jpg">
+            <img src="image7.jpg" alt="">
+        </a>
+        <a href="image8.jpg">
+            <img src="image8.jpg" alt="">
+        </a>
+        <a href="image9.jpg">
+            <img src="image9.jpg" alt="">
+        </a>
+        <a href="image10.jpg">
+            <img src="image10.jpg" alt="">
+        </a>
+        <a href="image11.jpg">
+            <img src="image11.jpg" alt="">
+        </a>
+            
+
+    </div>
+    </body>
+</html>
